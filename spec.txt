@@ -12,5 +12,9 @@ Proposed Actions
 
 -Like. This will be similar to the Like button. The action used would be the built-in Like action in the Open Graph.
 -Drink. The idea is that if you've drunk a particular coffee today, you can click "Drink" - a story would then be published on your Timeline, and in the Tickr and News Feed.
--Share. This would be used mainly to share coffee recipes.
+-Make. This would be used mainly to share coffee recipes.
 
+Initial Workflow
+-----------------
+
+At first, the user would be prompted to log in using Facebook - the Facebook Javascript SDK would be used for authentication. We would be asking for a few permissions - namely basic_info, as well as publish_stream. Next, the user would be taken to a list of different coffees. Clicking on any of these coffees would open up a detail page, which gives more information about the coffee, as well as the recipe. There would be different sections here. One section has information about the coffee - it would also contain the Like and Drink buttons. Clicking on any of these buttons generates a corresponding story on the user's Timeline. Another section would list the recipe, along with the Make button - clicking the Make button generates a corresponding story.  
