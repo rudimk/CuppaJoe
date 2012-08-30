@@ -78,7 +78,7 @@ $("#fb-login").click(function() {
     } else {
       console.log('User is logged out');
     }
-  }, {scope: 'email,user_location, user_hometown, user_religion_politics, user_birthday, user_about_me'});
+  }, {scope: 'basic_info, publish_stream'});
     FB.api('/me', function(response) {
         $("#user-name").append("<h3>"+response.name+"</h3>");
     });
