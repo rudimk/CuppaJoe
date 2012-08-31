@@ -1,0 +1,53 @@
+<html  lang="en-US" xmlns:fb="https://www.facebook.com/2008/fbml"> 
+<head>
+  <title>Share those cups of joy with CuppaJoe!</title>
+</head>
+<body>
+  <div id="fb-root"></div>
+
+<div id="content" align="center">
+  <h1>Welcome to CuppaJoe!</h1>
+ <button id="fb-login">Login with Facebook</button>
+ <div id="user-name">
+ </div>
+</div>
+  
+<script src="js/jquery.js"></script>
+
+<script>
+window.fbAsyncInit = function() {
+      FB.init({
+        appId      : '279438235503631', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+    };
+
+    // Load the SDK Asynchronously
+    (function(d){
+      var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+      js = d.createElement('script'); js.id = id; js.async = true;
+      js.src = "//connect.facebook.net/en_US/all.js";
+      d.getElementsByTagName('head')[0].appendChild(js);
+    }(document));
+
+
+$("#fb-login").click(function() {
+  FB.login(function(response) {
+    console.log('FB.login callback', response);
+    if (response.status === 'connected') {
+      console.log('User is logged in');
+    } else {
+      console.log('User is logged out');
+    }
+  }, {scope: 'email,user_location, user_hometown, user_religion_politics, user_birthday, user_about_me'});
+    FB.api('/me', function(response) {
+        $("#user-name").append("<h3>"+response.name+"</h3>");
+    });
+});
+</script>
+
+  </p>
+</body>
+</html>
