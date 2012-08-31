@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Untitled</title>
+</head>
+<body>
+<div id="fb-root"></div>
+
+
+<h1>Janos Demo</h1>
+
+<button class="btn btn-success" id="fb-login">Login</button>
+
+
+<p>
+
+<div id="user-name">
+</div>
+<div id="user-bday">
+</div>
+<div id="user-bio">
+</div>
+<div id="user-email">
+</div>
+<div id="user-location">
+</div>
+<div id="user-hometown">
+</div>
+<div id="user-religion">
+</div>
+<div id="user-politics">
+</div>
+
+<p>
+
+<button id="send-dialog">Send</button>
+
+<p>
+
+<button id="get-bday">Get B'day</button>
+
+<p>
+
+<button id="get-bio">Get Bio</button>
+
+<p>
+
+<button id="get-email">Get Email</button>
+
+<p>
+
+<button id="get-location">Get Location</button>
+
+<p>
+
+<button id="get-hometown">Get Hometown</button>
+
+<p>
+
+<button id="get-religion">Get Religion</button>
+
+<p>
+
+<button id="get-politics">Get Politics</button>
+
+<script src="js/jquery.js"></script>
+<script src="https://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+<script>
+
+window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '279438235503631', // App ID
+      //channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+      status     : true, // check login status
+      cookie     : true, // enable cookies to allow the server to access the session
+      xfbml      : true  // parse XFBML
+    });
+
+    // Additional initialization code here
+  };
+
+
+// Load the SDK Asynchronously
+  (function(d){
+     var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement('script'); js.id = id; js.async = true;
+     js.src = "//connect.facebook.net/en_US/all.js";
+     ref.parentNode.insertBefore(js, ref);
+   }(document));
+
+  $("#fb-login").click(function() {
+  FB.login(function(response) {
+    console.log('FB.login callback', response);
+    if (response.status === 'connected') {
+      console.log('User is logged in');
+    } else {
+      console.log('User is logged out');
+    }
+  }, {scope: 'email,user_location, user_hometown, user_religion_politics, user_birthday, user_about_me'});
+    FB.api('/me', function(response) {
+        $("#user-name").append("<h3>"+response.name+"</h3>");
+    });
+});
+  $("#send-dialog").click(function() {
+  	FB.ui(
+  {
+    method: 'feed',
+    name: 'Codeville',
+    link: 'http://codeville.wordpress.com',
+  },
+  function(response) {
+    if (response && response.post_id) {
+      console.log('Post was published.');
+    } else {
+      console.log('Post was not published.');
+    }
+  }
+);
+  });
+
+  $("#get-email").click(function() {
+  	FB.api('/me?fields=email', function(response){$("#user-email").append("<h3>"+response.email+"</h3>");})
+  });
+
+$("#get-location").click(function() {
+  	FB.api('/me?fields=location', function(response){$("#user-location").append("<h3>"+response.location.name+"</h3>");})
+  });
+
+$("#get-hometown").click(function() {
+  	FB.api('/me?fields=hometown', function(response){$("#user-hometown").append("<h3>"+response.hometown.name+"</h3>");})
+  });
+
+ $("#get-religion").click(function() {
+  	FB.api('/me?fields=religion', function(response){$("#user-religion").append("<h3>"+response.religion+"</h3>");})
+  });
+ 
+ $("#get-politics").click(function() {
+  	FB.api('/me?fields=political', function(response){$("#user-politics").append("<h3>"+response.political+"</h3>");})
+  });
+
+ $("#get-bday").click(function() {
+  	FB.api('/me?fields=birthday', function(response){$("#user-bday").append("<h3>"+response.birthday+"</h3>");})
+  });
+
+ $("#get-bio").click(function() {
+  	FB.api('/me?fields=bio', function(response){$("#user-bio").append("<h3>"+response.bio+"</h3>");})
+  });        
+</script>
+</body></html>
