@@ -10,7 +10,7 @@ Proposed Objects
 Proposed Actions
 -----------------
 
--Like. This will be similar to the Like button. The action used would be the built-in Like action in the Open Graph.
+-Love. This will be similar to the Like button. 
 -Drink. The idea is that if you've drunk a particular coffee today, you can click "Drink" - a story would then be published on your Timeline, and in the Tickr and News Feed.
 -Make. This would be used mainly to share coffee recipes.
 
