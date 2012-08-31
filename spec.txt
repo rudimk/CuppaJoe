@@ -21,6 +21,11 @@ At first, the user would be prompted to log in using Facebook - the Facebook Jav
 
 Bootstrap and jQuery would be used. A lot. 
 
+Hosting
+--------
+
+Costs are obviously a constraint. In choosing a hosting partner, what also matters, is the kind of hosting model, and the ease of use associated with it. At this point of time, it seems to be a great idea to use AppHarbor for deploying the app in production. It's free plan is suited for our app, which wouldnt need to scale up so soon. Further, AppHarbor is closely integrated with GitHub, so a push to the master branch in the GitHub repo would automatically trigger a build in AppHarbor.
+
 
 Progress
 ---------
