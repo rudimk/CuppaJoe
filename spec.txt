@@ -36,3 +36,9 @@ Progress
 -- Adding buttons for posting actions, and metadata tags for objects
 -- Theming the app using jQuery Bootstrap
 -- Deployment to AppHarbor
+
+
+Updates
+--------
+
+It might be a good idea to use Jekyll for developing the app. The app would then be hosted on, and served from GitHub itself. However, not sure if this would scale later.
