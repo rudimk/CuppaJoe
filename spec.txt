@@ -24,7 +24,7 @@ Bootstrap and jQuery would be used. A lot.
 Hosting
 --------
 
-Costs are obviously a constraint. In choosing a hosting partner, what also matters, is the kind of hosting model, and the ease of use associated with it. At this point of time, it seems to be a great idea to use AppHarbor for deploying the app in production. It's free plan is suited for our app, which wouldnt need to scale up so soon. Further, AppHarbor is closely integrated with GitHub, so a push to the master branch in the GitHub repo would automatically trigger a build in AppHarbor.
+Costs are obviously a constraint. In choosing a hosting partner, what also matters, is the kind of hosting model, and the ease of use associated with it. At this point of time, it seems to be a great idea to use AppHarbor for deploying the app in production. It's free plan is suited for our app, which wouldnt need to scale up so soon. Further, AppHarbor is closely integrated with GitHub, so a push to the master branch in the GitHub repo would automatically trigger a build in AppHarbor. Hosting the app in a bucket in Amazon S3 is also an option worth exploring.
 
 
 Progress
@@ -36,9 +36,3 @@ Progress
 -- Adding buttons for posting actions, and metadata tags for objects
 -- Theming the app using jQuery Bootstrap
 -- Deployment to AppHarbor
-
-
-Updates
---------
-
-It might be a good idea to use Jekyll for developing the app. The app would then be hosted on, and served from GitHub itself. However, not sure if this would scale later.
