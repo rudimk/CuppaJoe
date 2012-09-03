@@ -1,4 +1,4 @@
-The idea is to have a Facebook app, that lists a number of different coffees, along with their recipes. The app would use the Open Graph, to allow users to share these coffees, as well as their recipes.
+The idea is to have a Facebook app, that lists a number of different coffees, along with their recipes. The app would use the Open Graph, to allow users to share these coffees, as well as their recipes. For now, the app would list between 10-12 coffees.
 
 Proposed Objects
 -----------------
@@ -36,3 +36,13 @@ Progress
 -- Adding buttons for posting actions, and metadata tags for objects
 -- Theming the app using jQuery Bootstrap
 -- Deployment to AppHarbor
+
+
+Future Plans
+-------------
+
+Once this app is live, the following points would be used to extend the app.
+
+-- The first major area would be content. As of now, the app would be released with about 10-12 coffees; it would be a good idea to add a coffee or two ever week.
+-- Currently, the app is being written using client-side Javascript. The first overhaul should be about refactoring the codebase, and using inline CoffeeScript. Then, after a few weeks, once these changes are stable, it would be a good idea to use Node.js and CoffeeScript together, and store data in a NoSQL database.
+-- Later, the code could be forked to create another version of the app, written purely in Opa.
